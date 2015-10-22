@@ -14,33 +14,25 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
     <title>seed-element Demo</title>
     <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
-    <link rel="import" href="../seed-element.html">
+    <link rel="import" href="../tassello-rz.html">
   </head>
   <body unresolved>
 
-    <p>An example of <code>&lt;seed-element&gt;</code>:</p>
+    <p>An example of <code>&lt;tassello-rz&gt;</code>:</p>
 
-    <p>Make words! <button id="saybtn">Say Something</button></p>
-    <p>Make lasers! <button id="laserbtn">Fire lasers</button></p>
+    Click on heart!
 
-    <seed-element author='{"name": "Lord Meowser", "image": "http://placekitten.com/g/200/300"}' fancy>
-      <h2>Hello seed-element</h2>
-    </seed-element>
+
+    <tassello-rz 
+      id="prova"
+      url_image="http://racyzone.altervista.org/images/logo_racyzone_big.jpg"
+      title="Questo sito è bellissimo!"
+      link="http://racyzone.altervista.org"
+      location="https://racyzone.firebaseio.com/heartcounter/0/">
+    </tassello-rz>
 
     <script>
-      var seedElement = document.querySelector('seed-element');
-      
-      document.querySelector('#saybtn').addEventListener('click', function() {
-        alert(seedElement.sayHello('Hallo!'));
-      });
-      
-      document.querySelector('#laserbtn').addEventListener('click', function() {
-        seedElement.fireLasers();
-      });
-      
-      document.addEventListener("seed-element-lasers", function(e) {
-        console.log(e.detail.sound);
-      });
+      var tasselloRz = document.querySelector('tassello-rz');
       
     </script>
 
