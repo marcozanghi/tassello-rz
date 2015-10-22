@@ -1,6 +1,7 @@
-# seed-element
+# tassello-rz
 
-An element providing a starting point for your own reusable Polymer elements.
+
+An element providing a tile of your topic.
 
 
 ## Dependencies
@@ -28,34 +29,15 @@ And you can run it via:
     polyserve
 
 Once running, you can preview your element at
-`http://localhost:8080/components/seed-element/`, where `seed-element` is the name of the directory containing it.
+`http://localhost:8080/components/tassello-rz/`, where `tassello-rz` is the name of the directory containing it.
 
 
-## Testing Your Element
 
-Simply navigate to the `/test` directory of your element to run its tests. If
-you are using Polyserve: `http://localhost:8080/components/seed-element/test/`
+Example:
 
-### web-component-tester
+    <tassello-rz></tassello-rz>
 
-The tests are compatible with [web-component-tester](https://github.com/Polymer/web-component-tester).
-Install it via:
+### Author
 
-    npm install -g web-component-tester
-
-Then, you can run your tests on _all_ of your local browsers via:
-
-    wct
-
-#### WCT Tips
-
-`wct -l chrome` will only run tests in chrome.
-
-`wct -p` will keep the browsers alive after test runs (refresh to re-run).
-
-`wct test/some-file.html` will test only the files you specify.
-
-
-## Yeoman support
-
-If you'd like to use Yeoman to scaffold your element that's possible. The official [`generator-polymer`](https://github.com/yeoman/generator-polymer) generator has a [`seed`](https://github.com/yeoman/generator-polymer#seed) subgenerator.
+*`Author`: Marco Zanghì visita [racyzone.altervista.org](http://racyzone.altervista.org)
+*`mail` : [racyzone@outlook.com](mailto:racyzone@outloo.com)
