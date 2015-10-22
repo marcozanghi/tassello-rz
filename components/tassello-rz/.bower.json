@@ -1,0 +1,43 @@
+{
+  "name": "tassello-rz",
+  "authors": [
+    "Marco Zanghì <racyzone@outlook.com>"
+  ],
+  "description": "View a Tile about your topic.",
+  "keywords": [
+    "web-component",
+    "polymer",
+    "racyzone",
+    "rz",
+    "tassello"
+  ],
+  "main": "tassello-rz.html",
+  "license": "http://polymer.github.io/LICENSE.txt",
+  "homepage": "https://github.com/marcozanghi/tassello-rz/",
+  "ignore": [
+    "/.*",
+    "/test/"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.1.0",
+    "paper-fab": "PolymerElements/paper-fab#~1.0.6",
+    "firebase-element": "GoogleWebComponents/firebase-element#~1.0.7",
+    "iron-image": "PolymerElements/iron-image#~1.0.2",
+    "iron-icon": "PolymerElements/iron-icon#~1.0.7",
+    "iron-icons": "PolymerElements/iron-icons#~1.0.4"
+  },
+  "devDependencies": {
+    "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
+    "web-component-tester": "*"
+  },
+  "_release": "de0fc21c1f",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "de0fc21c1fd5ecc96adcc33321f5acdbfb8fe6db"
+  },
+  "_source": "git://github.com/marcozanghi/tassello-rz.git",
+  "_target": "master",
+  "_originalSource": "marcozanghi/tassello-rz",
+  "_direct": true
+}

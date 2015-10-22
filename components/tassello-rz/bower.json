@@ -1,0 +1,34 @@
+{
+  "name": "tassello-rz",
+  "version": "1.0.3",
+  "authors": [
+    "Marco Zanghì <racyzone@outlook.com>"
+  ],
+  "description": "View a Tile about your topic.",
+  "keywords": [
+    "web-component",
+    "polymer",
+    "racyzone",
+    "rz",
+    "tassello"
+  ],
+  "main": "tassello-rz.html",
+  "license": "http://polymer.github.io/LICENSE.txt",
+  "homepage": "https://github.com/marcozanghi/tassello-rz/",
+  "ignore": [
+    "/.*",
+    "/test/"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.1.0",
+    "paper-fab": "PolymerElements/paper-fab#~1.0.6",
+    "firebase-element": "GoogleWebComponents/firebase-element#~1.0.7",
+    "iron-image": "PolymerElements/iron-image#~1.0.2",
+    "iron-icon": "PolymerElements/iron-icon#~1.0.7",
+    "iron-icons": "PolymerElements/iron-icons#~1.0.4"
+  },
+  "devDependencies": {
+    "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
+    "web-component-tester": "*"
+  }
+}

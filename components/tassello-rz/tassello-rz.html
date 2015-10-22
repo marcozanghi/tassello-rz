@@ -1,0 +1,284 @@
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+<link rel="import" href="../polymer/polymer.html">
+
+<!--
+
+An element providing a tile of your topic.
+
+Example:
+
+    <tassello-rz></tassello-rz>
+
+### Author
+
+*`Author`: Marco Zanghì visita [racyzone.altervista.org](http://racyzone.altervista.org)
+*`mail` : [racyzone@outlook.com](mailto:racyzone@outloo.com)
+
+@group Racyzone Element
+@element seed-element
+@demo demo/index.html
+@hero hero.svg
+-->
+<dom-module id="tassello-rz">
+  
+  <link rel="import" href="../paper-fab/paper-fab.html" >
+  <link rel="import" href="../firebase-element/firebase-document.html">
+  <link rel="import" href="../iron-image/iron-image.html">
+  <link rel="import" href="../iron-icon/iron-icon.html">
+  <link rel="import" href="../iron-icons/iron-icons.html">
+  <template>
+    <style>
+    :host{
+      overflow-y: hidden;
+      
+    }
+    #tassello-rz-content{
+      position:relative;
+      margin-left:20px;
+      margin-top:20px;
+      display: inline-block;
+      width: 180px;
+      height: 300px;
+      box-shadow:  1px 1px 3px rgba(0,0,0,0.3) ;
+      overflow: hidden;
+    }
+    #tassello-rz-image{
+      position: relative;
+      z-index: 10;
+      top:0px;
+      left: 0px;
+    }
+    #tassello-rz-titolo{
+      position: relative;
+      z-index: 20;
+      top:-50px;
+      left: 0px;
+      height: 50px;
+      width: 160px;
+      padding: 10px;
+      padding-top: 3px;
+      text-align: right;
+      font-style: italic;
+      text-transform: uppercase;
+      font-size: 14px;
+      background-color:rgba(255, 0, 0, 0.8);
+      color: white;
+      font-family: sans-serif;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.3) ;
+
+      
+    }
+    #tassello-rz-fab{
+      position: relative;
+      z-index: 30;
+      top:-350px;
+      left: 5px;
+      width: 30px;
+      height: 30px;
+      
+    }
+    
+    @media (max-width: 600px) {
+      #tassello-rz-content{
+        margin-top:20px;
+        margin-left: calc((100% - 180px)/2);
+        
+        }
+      }
+
+ 
+      #heart-animated{
+        position:absolute;
+        z-index:50;
+        bottom:100px;
+        right:0px;
+        color:red;
+        opacity:0;
+        overflow-y: hidden;
+      }
+  
+
+  .rz-animation{
+    overflow-y: hidden;
+    animation: animationFrames ease-in-out 4s;
+    animation-iteration-count: 1;
+    transform-origin: 50% 50%;
+    -webkit-animation: animationFrames ease-in-out 4s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-transform-origin: 50% 50%;
+    -moz-animation: animationFrames ease-in-out 4s;
+    -moz-animation-iteration-count: 1;
+    -moz-transform-origin: 50% 50%;
+    -o-animation: animationFrames ease-in-out 4s;
+    -o-animation-iteration-count: 1;
+    -o-transform-origin: 50% 50%;
+    -ms-animation: animationFrames ease-in-out 4s;
+    -ms-animation-iteration-count: 1;
+    -ms-transform-origin: 50% 50%;
+  }
+
+  @keyframes animationFrames{
+    0% {
+      opacity:1;
+      transform:  translate(-26px,150px)  scaleX(1.00) scaleY(1.00) ;
+    }
+    31% {
+      transform:  translate(-45px,25px)  scaleX(1.20) scaleY(1.20) ;
+    }
+    67% {
+      transform:  translate(7px,-120px)  scaleX(1.40) scaleY(1.40) ;
+    }
+    100% {
+      opacity:0;
+      transform:  translate(-28px,-253px)  scaleX(1.60) scaleY(1.60) ;
+    }
+  }
+
+  @-moz-keyframes animationFrames{
+    0% {
+      opacity:1;
+      -moz-transform:  translate(-26px,150px)  scaleX(1.00) scaleY(1.00) ;
+    }
+    31% {
+      -moz-transform:  translate(-45px,25px)  scaleX(1.20) scaleY(1.20) ;
+    }
+    67% {
+      -moz-transform:  translate(7px,-120px)  scaleX(1.40) scaleY(1.40) ;
+    }
+    100% {
+      opacity:0;
+      -moz-transform:  translate(-28px,-253px)  scaleX(1.60) scaleY(1.60) ;
+    }
+  }
+
+  @-webkit-keyframes animationFrames {
+    0% {
+      opacity:1;
+      -webkit-transform:  translate(-26px,150px)  scaleX(1.00) scaleY(1.00) ;
+    }
+    31% {
+      -webkit-transform:  translate(-45px,25px)  scaleX(1.20) scaleY(1.20) ;
+    }
+    67% {
+      -webkit-transform:  translate(7px,-120px)  scaleX(1.40) scaleY(1.40) ;
+    }
+    100% {
+      opacity:0;
+      -webkit-transform:  translate(-28px,-253px)  scaleX(1.60) scaleY(1.60) ;
+    }
+  }
+
+  @-o-keyframes animationFrames {
+    0% {
+      opacity:1;
+      -o-transform:  translate(-26px,150px)  scaleX(1.00) scaleY(1.00) ;
+    }
+    31% {
+      -o-transform:  translate(-45px,25px)  scaleX(1.20) scaleY(1.20) ;
+    }
+    67% {
+      -o-transform:  translate(7px,-120px)  scaleX(1.40) scaleY(1.40) ;
+    }
+    100% {
+      opacity:0;
+      -o-transform:  translate(-28px,-253px)  scaleX(1.60) scaleY(1.60) ;
+    }
+  }
+
+  @-ms-keyframes animationFrames {
+    0% {
+      opacity:1;
+      -ms-transform:  translate(-26px,150px)  scaleX(1.00) scaleY(1.00) ;
+    }
+    31% {
+      -ms-transform:  translate(-45px,25px)  scaleX(1.20) scaleY(1.20) ;
+    }
+    67% {
+      -ms-transform:  translate(7px,-120px)  scaleX(1.40) scaleY(1.40) ;
+    }
+    100% {
+      opacity:0;
+      -ms-transform:  translate(-28px,-253px)  scaleX(1.60) scaleY(1.60) ;
+    }
+  }
+
+  
+ 
+    </style>
+ 
+<firebase-document
+ location = "{{location}}"
+ data     = "{{heartcounter}}">
+</firebase-document>  
+    <div id="tassello-rz-content">
+      <div id="tassello-rz-image">
+        <a target="_blank"  href="{{ link }}">
+        <iron-image  style="width:180px;height:300px;" sizing="cover" src="{{ url_image }}" preload fade></iron-image>
+        </a>
+      </div>
+      <div id="tassello-rz-titolo">{{ title }}</div>
+      <div id="tassello-rz-fab">
+        <paper-fab style="width:40px;height:40px;background-color:white;color:#C80000;" on-click="favorite" icon="favorite" id="{{ id }}"></paper-fab>  
+      </div>
+        <iron-icon icon="favorite" id="heart-animated" class="heart rz-animation"></iron-icon>
+    </div>
+      
+  </template>
+</dom-module>
+<script>
+  Polymer({
+    is: "tassello-rz",
+    properties:{
+      title:{
+        type: String,
+        value: "RacyZone"
+      },
+      url_image:{
+        type: String,
+        value: "https://racyzone.firebaseio.com/heartcounter/0/"
+      },
+      id:{
+        type: String,
+        value: "default"
+      },
+      link:{
+        type: String,
+        value: "http://racyzone.altervista.org"
+      },
+      location:{
+        type: String,
+        value: "https://racyzone.firebaseio.com/heartcounter/0/"
+      }
+    },
+
+    listeners:{
+      
+    },
+    /**
+    *This function increments the counter 'value' which is located in firebase-element specified in 'location' property.
+    *json =>  {counter:'value'}
+    */
+    favorite: function(e) {
+      //console.log('favorite');
+      var link = document.createElement('iron-icon');
+      link.setAttribute('icon', 'favorite');
+      link.setAttribute('id', 'heart-animated');
+      link.setAttribute('class', 'rz-animation');
+      Polymer.dom(this.root).appendChild(link)
+    
+      this.heartcounter.counter = parseInt( this.heartcounter.counter)+1;
+      var ref = new Firebase(this.location);
+      ref.set({counter: this.heartcounter.counter });
+    }
+    
+
+  });
+</script>
